@@ -1,0 +1,56 @@
+.hero-film-review { min-height: 100svh; padding: 36px 32px 64px; background: var(--background); color: var(--foreground); }
+.hero-film-review__inner { max-width: 1400px; margin: 0 auto; }
+.hero-film-review__header { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.hero-film-review__header .ararat-logo { font-size: 24px; }
+.hero-film-review__status { color: var(--muted-foreground); font: 12px var(--font-mono); }
+.hero-film-review h1 { font: 700 36px/1.15 var(--font-display); margin: 0 0 24px; letter-spacing: 0; }
+.hero-film-review__film { width: 100%; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: var(--card); }
+.hero-film-review__film video { display: block; width: 100%; height: 100%; object-fit: contain; cursor: none; }
+.hero-film-review__film { cursor: none; }
+.hero-film-review__controls { display: flex; align-items: center; gap: 10px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+.hero-film-review__controls output { margin-left: auto; color: var(--muted-foreground); font: 12px var(--font-mono); }
+.hero-film-review__error { color: var(--destructive); margin: 12px 0; }
+.hero-film-review__shots { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; padding: 24px 0 0; margin: 0; list-style: none; }
+.hero-film-review__shots li { display: flex; flex-direction: column; gap: 8px; }
+.hero-film-review__shots span { color: var(--primary); font: 12px var(--font-mono); }
+.hero-film-review__shots strong { font: 600 18px var(--font-display); }
+.hero-film-review__shots small { color: var(--muted-foreground); font-size: 14px; }
+html:has(.hero-film-review) .cursor-glow, html:has(.hero-film-review) .cookie-banner { display: none; }
+@media(max-width: 700px) { .hero-film-review { padding: 24px 16px 40px; } .hero-film-review h1 { font-size: 28px; } .hero-film-review__shots { grid-template-columns: repeat(2,minmax(0,1fr)); } .hero-film-review__status { font-size: 10px; } }/* Live film screens: a flat 1280×720 stage scaled to the player; each screen is one matrix3d layer. */
+.film-screens { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.film-screens__stage { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; }
+.film-screens__layer > * { position: absolute; left: 0; top: 0; transform-origin: 0 0; backface-visibility: hidden; }
+.fs-ui { --fs-ink: var(--color-slate-dark); --fs-soft: var(--color-clay); --fs-teal: var(--color-clay); background: var(--color-ivory-light); color: var(--fs-ink); font-family: var(--font-sans); overflow: hidden; border-radius: var(--radius-card); }
+.is-cafe .fs-ui, .is-cafe .fs-glass { border-radius: var(--radius-sm); }
+.fs-glass { border-radius: var(--radius-card); box-shadow: inset 0 0 0 1px var(--color-stone); background: color-mix(in srgb, var(--color-ivory-light) 12%, transparent); opacity: .55; }
+.fs-phone { height: 100%; display: flex; flex-direction: column; justify-content: space-evenly; padding: 58px 18px 26px; position: relative; }
+.fs-notch { position: absolute; top: 0; left: 50%; width: 132px; height: 32px; transform: translateX(-50%); background: var(--color-slate-dark); border-radius: 0 0 20px 20px; }
+.fs-brand { display: flex; align-items: center; gap: 12px; font: 700 40px/1 var(--font-sans); }
+.fs-mark { width: 50px; height: 44px; color: var(--color-clay); }
+.fs-status { display: flex; align-items: center; gap: 12px; font: 700 38px/1.1 var(--font-sans); }
+.fs-check { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--color-clay); color: #fff; }
+.fs-check svg { width: 30px; height: 30px; }
+.fs-amount { display: flex; align-items: center; gap: 12px; font: 400 60px/1 var(--font-mono); letter-spacing: -2px; white-space: nowrap; }
+.fs-token { width: 52px; height: 52px; flex: none; }
+.fs-coin { font: 400 32px/1 var(--font-mono); color: var(--fs-teal); margin-top: -14px; }
+.fs-card { background: var(--color-ivory-light); border: 1px solid var(--color-stone); border-radius: var(--radius-card); padding: 6px 16px; }
+.fs-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--color-stone); font-size: 32px; line-height: 1.15; }
+.fs-row:last-child { border-bottom: 0; }
+.fs-row span { color: var(--fs-soft); }
+.fs-row b { font-weight: 500; }
+.fs-stack { flex-direction: column; align-items: flex-start; gap: 6px; }
+.fs-mono { font: 400 31px/1.1 var(--font-mono); letter-spacing: -.5px; }
+.fs-chip { background: var(--color-oat-warm); color: var(--color-slate-dark); border-radius: var(--radius-badge); padding: 4px 16px; font: 400 30px/1.1 var(--font-mono); }
+.fs-ok { color: var(--fs-teal); }
+.fs-laptop { height: 100%; display: flex; flex-direction: column; }
+.fs-chrome { flex: none; height: 46px; display: flex; align-items: center; gap: 12px; padding: 0 22px; background: var(--color-oat-warm); border-bottom: 1px solid var(--color-stone); }
+.fs-chrome i { width: 16px; height: 16px; border-radius: 50%; background: var(--color-clay); }
+.fs-lbody { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 18px 40px 28px; }
+.fs-laptop .fs-brand { font-size: 44px; }
+.fs-laptop .fs-status { font-size: 50px; }
+.fs-laptop .fs-check { width: 58px; height: 58px; }
+.fs-laptop .fs-amount { font-size: 76px; }
+.fs-laptop .fs-token { width: 66px; height: 66px; }
+.fs-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.fs-laptop .fs-row { font-size: 36px; padding: 12px 0; }
+.fs-laptop .fs-mono, .fs-laptop .fs-chip { font-size: 34px; }

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f0eee6" />
+    <title>AraratPay — Business Payments, Powered by Crypto</title>
+    <meta
+      name="description"
+      content="One AraratPay platform, four flows: accept crypto, pay out, settle to your bank and spend with cards from one account."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://araratpay.vercel.app/" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AraratPay" />
+    <meta property="og:title" content="AraratPay — Business Payments, Powered by Crypto" />
+    <meta
+      property="og:description"
+      content="One AraratPay platform, four flows: accept crypto, pay out, settle to your bank and spend with cards from one account."
+    />
+    <meta property="og:url" content="https://araratpay.vercel.app/" />
+    <meta property="og:image" content="https://araratpay.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="AraratPay — Business Payments, Powered by Crypto" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AraratPay — Business Payments, Powered by Crypto" />
+    <meta
+      name="twitter:description"
+      content="One AraratPay platform, four flows: accept crypto, pay out, settle to your bank and spend with cards from one account."
+    />
+    <meta name="twitter:image" content="https://araratpay.vercel.app/og-image.png" />
+    <meta name="twitter:image:alt" content="AraratPay — Business Payments, Powered by Crypto" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://araratpay.vercel.app/#organization",
+            "name": "AraratPay",
+            "url": "https://araratpay.vercel.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "@id": "https://araratpay.vercel.app/#logo",
+              "url": "https://araratpay.vercel.app/icon-512.png",
+              "caption": "AraratPay"
+            },
+            "image": "https://araratpay.vercel.app/og-image.png",
+            "description": "One AraratPay platform, four flows: accept crypto, pay out, settle to your bank and spend with cards from one account."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://araratpay.vercel.app/#website",
+            "url": "https://araratpay.vercel.app/",
+            "name": "AraratPay",
+            "publisher": {
+              "@id": "https://araratpay.vercel.app/#organization"
+            },
+            "description": "Business payments, powered by crypto. Accept crypto, pay out, settle to your bank and spend with cards from one account."
+          }
+        ]
+      }
+    </script>
+
+    <!-- Pre-paint Theme Script -->
+    <script>
+      try {
+        var t = localStorage.getItem('ararat-theme');
+        if (t !== 'light' && t !== 'dark')
+          t = 'light';
+        document.documentElement.dataset['theme'] = t;
+        if (t === 'dark') document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+        var m = document.querySelector('meta[name=theme-color]');
+        if (m) m.content = t === 'dark' ? '#141413' : '#f0eee6';
+      } catch (e) {
+        document.documentElement.dataset['theme'] = 'light';
+      }
+      (function () {
+        try {
+          if (localStorage.getItem('ararat-cookie-choice'))
+            document.documentElement.classList.add('cookie-chosen');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

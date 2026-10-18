@@ -1,0 +1,44 @@
+# Review-only cinematic film
+
+This asset set belongs only to the unlinked, noindex `/hero-film-review` page. It is not approved for homepage installation. The existing homepage film and poster remain unchanged.
+
+## Selected review cut: boutique grip v10
+
+Only the boutique shoulder base and its full-height portrait invoice have changed. The new continuity-derived base has a one-hand bezel-only grip, visible fingers curling around one edge, an opposing thumb, matched skin/daylight and contact shadows. The unchanged mobile invoice content fills the rounded display to its bottom safe margin; separate Fee and Status rows remove unused lower space. Re-measured glass quad, warm exposure/reflection/grain and notch/rounded masking preserve the bezel and hands. The device/display/fingers share eased push and subpixel sway. A locally masked closed-eye reference gives one soft blink; foreground breathing/head inclination are simulated rather than captured motion. Home, café and restaurant source stills, composites, wide footage and invoice data remain unchanged after grip inspection: restaurant already has an edge-wrapped grip, home a supporting reading grip, café hands resting at the keyboard. Their sources are not regenerated. Existing 91/103-frame chapter construction, fourteen-frame circular dissolves, 720 frames/30s and poster are retained. Re-encoding may introduce small compression differences outside the boutique chapter. Review-only; homepage untouched.
+
+## Previous review cut: device invoice v8
+
+V8 replaces standalone cards with invoices inside devices. Four new continuity-derived `*-invoice-v8.jpg` frames use nearly front-on screens, relaxed bezel-only grips, and visible soft foreground people. Each invoice is perspective-warped to measured inner-glass corners, antialiased/rounded and notch-masked before flattening into its photograph. Native 3x3 homography is the pre-rendered equivalent of a browser matrix3d corner pin. Original fingers/bezel remain above the display. Warm off-white exposure, diagonal reflection and fixed fine grain blend glass; phone portrait 9:41, official mark paths, real token marks, six rows with combined Fee/Status; café landscape includes window chrome, seven detail rows and Amount/Fee/Net/Settled summary. Café sample net is 89.00 minus 0.89 = 88.11 USDC. All records are invented creative samples.
+
+Each chapter contains 91 wide frames and 103 shoulder frames including fourteen-frame dissolve handles; exactly 720 frames/30s, plain internal cuts and 0.583s circular chapter dissolves. The complete baked device/display shares a 4% eased push; soft foreground breathing and background drift avoid moving the screen relative to the device. No independent display animation, tap, cursor or standalone invoice frames. Motion limitations: these shoulder shots simulate breathing/drift from stills, not genuine blink/hair animation. Fine detail remains small on mobile playback. Original wide footage and live homepage remain unchanged. 720p/540p MP4/WebM and a new WebP poster; old pointers retained.
+
+## Previous review cut: glow v7
+
+V7 supersedes all earlier screen/tap briefs. The 30-second, 24fps film has boutique, home, café and restaurant chapters with a wide, a genuine generated moving shoulder view and a separate front-on invoice. The original bright wide people/wardrobe/sets remain the continuity references. Four new `*-glow-v6` generated shots retain blank warm glass; no payment UI is composited onto any device. Invoice cards use the official SVG paths, Familjen Grotesk/Inter/JetBrains Mono, the real Tether and USD Coin marks, requested 100/100/89/100 amounts and flat 1% sample records. Dates, invoice identifiers, merchant details and hashes are invented creative records, not actual transactions.
+
+Each chapter starts every 7.5s. Extra overlap handles preserve exactly 720 frames; wide segments are about 3.29s, shoulder 2.5s, invoice 2.29s before overlaps. Plain cuts separate shots; fourteen-frame (0.583s at 24fps) eased dissolves join chapters and the circular seam. One shared warm bright grade, gentle camera pushes, no cursor, thumb animation, payment overlays or banned labels. Silent 1280×720 and 960×540 MP4/WebM encodes plus a real lightweight WebP poster. Earlier pointers remain for deployment safety.
+
+Qualifications: generated hands may rest against the glass; no tap animation is added. Café source motion may include slight natural hand movement; the original café wide uses slowed frame blending. Restaurant shoulder footage is slightly softer. Fine motion was generated, not individually rigged breathing/blink/hair layers. Review-only: no homepage installation or publishing.
+
+## Shoulder-view revision
+
+- Original bright wide footage: `c1.mp4` boutique beige-shirt owner; `c2.mp4` home customer in yellow; `c3.mp4` café woman with laptop; `c4.mp4` restaurant customer.
+- `boutique-shoulder.jpg`, `home-shoulder.jpg`, `cafe-shoulder.jpg`, `restaurant-shoulder.jpg`: AI-edited over-the-shoulder angle references derived independently from a frame of each matching original clip. These are generated angles, not additional recorded camera angles.
+- Motion references: `boutique-shoulder-motion`, `home-shoulder-motion-v2`, `cafe-shoulder-motion-v2` and `restaurant-shoulder-motion` are genuine image-to-video shots generated from those four shoulder references. Home and café initial generation attempts were blocked; revised neutral descriptions succeeded.
+- Brand: the official project Araratpay mark, Inter screen text and JetBrains Mono figures; only USDT/USDC token marks. All transactions are illustrative.
+- Review structure: four scenes in the above order, each with a three-second wide, a 1.5-second camera move and a three-second readable shoulder-view screen. Total target duration: 30 seconds.
+- No overlapping shot dissolves or UI crossfades. Playback is explicitly controlled, with a static poster before Play and a hidden cursor over the film.
+
+## Selected review cut: shoulder v5
+
+The review page uses the 30-second, 24fps shoulder v4 film, with 1280×720 and 960×540 MP4/WebM encodes and a lightweight poster. Original wide and generated shoulder footage are retained. Screen UI is corner-pinned with a tracked projective homography into each device frame before any shot-level camera transform. Rounded glass masks protect the bezel and phone notch; a thin dark inner edge follows the glass. Source-frame chroma/luminance masks restore fingers above the display, with ripples positioned in screen space. Lowered screen whites, warm tint, diagonal reflection, edge falloff, fine grain and far-edge softness blend the UI into the photographic plates. Sending uses a clean state cut after Send/spinner; receiving uses a sliding notification and a clean cut to confirmation. Café retains the incoming +89.00 USDC row and toast. No overlapping UI crossfades or independently transformed display layers. All transactions remain illustrative.
+
+V5 supersedes the transition and motion description above: wide shots play without added zoom, blur or slide; the shoulder angle begins with a hard cut. Only ten-frame (~0.4s) linear cross-dissolves connect scenes and wrap the loop, yielding 720 frames / 30 seconds. Phone inserts use their existing motion plate's own frame, with a separate distal-thumb cutout and inpainted plate. Curved eased approach, 4% press compression, four-frame hold, changing contact shadow and screen-space ripple synchronize with the notification opening or Send-to-spinner change at frame 24. Subtle displacement fields add shoulder breathing, head inclination, sway, background drift and shared device tremor. The café retains genuine generated typing motion, with payment-row animation delayed until after the initial typing. No blink or smile is fabricated. Lightweight WebP poster and desktop/mobile MP4/WebM files remain review-only.
+
+Limitations retained for review: faint thumb/base blend seams remain visible on close inspection, particularly at home. Phone foreground life is subtle simulated movement of an existing frame; hair/shirt do not have independently generated animation. Home phone framing exceeds the 35–40% target. No homepage installation has been performed.
+
+## Superseded review draft
+
+`hero-review-v1` pointers are retained for deployment safety. They refer to the earlier first-person review draft, not the requested shoulder-view revision. The older `*-tap.jpg` references are inputs to that superseded draft only.
+
+The intermediate `hero-review-shoulder-v2` render uses still shoulder frames with simulated camera motion, not the later genuine moving references. It is not the selected review cut.

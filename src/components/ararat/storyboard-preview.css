@@ -1,0 +1,13 @@
+.storyboard-review { min-height: 100svh; background: var(--media-scrim); color: var(--on-media); padding: 48px 24px 72px; }
+.storyboard-review__inner { width: min(100%, 1200px); margin-inline: auto; }
+.storyboard-review h1 { margin: 0 0 12px; font: 600 28px/1.2 var(--font-display); letter-spacing: 0; }
+.storyboard-review__intro { margin: 0 0 36px; font-size: 14px; color: var(--on-media); }
+.storyboard-review figure { margin: 0 0 44px; }
+.storyboard-review img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-sm, 8px); }
+.storyboard-review figcaption { display: grid; grid-template-columns: 160px 1fr; gap: 16px; margin-top: 16px; font-size: 14px; line-height: 1.6; }
+.storyboard-review figcaption strong { font: 500 12px/1.8 var(--font-mono); }
+.storyboard-review figcaption p { margin: 0; }
+@media (max-width: 600px) {
+  .storyboard-review { padding-top: 32px; }
+  .storyboard-review figcaption { grid-template-columns: 1fr; gap: 6px; }
+}

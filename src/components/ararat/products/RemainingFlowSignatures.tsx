@@ -1,0 +1,30 @@
+import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Check, CreditCard, Landmark, Radio, Send, Wallet } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { AraratMark } from '../AraratLogo';
+import { useMedia } from '../perf';
+
+function useLoop(length: number, ms: number) {
+ const [step,setStep] = useState(0); const [visible,setVisible] = useState(false);
+ const ref = useRef<HTMLDivElement>(null); const reduce = useMedia('(prefers-reduced-motion: reduce)');
+ useEffect(() => { if (!ref.current) return; const io = new IntersectionObserver(([e]) => setVisible(!!e?.isIntersecting),{threshold:.15}); io.observe(ref.current); return () => io.disconnect(); },[]);
+ useEffect(() => { if (!visible || reduce) return; const id=window.setInterval(() => {if(!document.hidden) setStep(i=>(i+1)%length)},ms); return () => clearInterval(id)},[visible,reduce,length,ms]);
+ return {ref,step:reduce?length-1:step,reduce};
+}
+const wallets=[['0x8f…a21c','UAE'],['0x20…b462','USA'],['0xc1…94a7','IND'],['0x11…2ef1','GBR'],['0x98…bc03','SGP']];
+export function CryptoOutSignature() {
+ const {ref,step,reduce}=useLoop(8,950); const sent=Math.max(0,Math.min(5,step-1));
+ return <div className="flow-signature out-signature" ref={ref} aria-label="Illustrative batch payout reaching five wallets"><div className="out-console"><div className="out-console-head"><span>ARARATPAY / PAYOUTS</span><Send size={16}/></div><div className="out-console-body"><small>ILLUSTRATIVE BATCH · 5 RECIPIENTS</small><strong>One batch.<br/>Five wallets.</strong><div className="out-route" aria-hidden="true"><svg viewBox="0 0 400 115" preserveAspectRatio="none"><circle cx="200" cy="96" r="12" className="out-route-origin"/><text x="200" y="100" textAnchor="middle">₮</text>{wallets.map(([,country],i)=>{const x=30+i*85, y=20+(Math.abs(2-i)*10); const path=`M 200 96 Q ${200+(x-200)*.5} -15 ${x} ${y}`;return <g key={country}><path d={path} className="out-route-line"/><circle cx={x} cy={y} r="4" className={i<sent?'out-route-arrived':'out-route-destination'}/>{step===i+2&&!reduce&&<motion.circle r="6" fill="#83eab2" initial={{offsetDistance:'0%'}} animate={{offsetDistance:'100%'}} transition={{duration:.85,ease:'easeInOut'}} style={{offsetPath:`path('${path}')`}}/>}</g>})}</svg></div><div className="out-wallets">{wallets.map(([address,country],i)=><motion.div key={address} className={i<sent?'is-sent':''} initial={false} animate={{opacity:i<sent?1:.65,scale:i<sent?1:.96}}><span>{i<sent?<Check size={13}/>:<Wallet size={13}/>}</span><span>{address}<small>{i<sent?'✓ SENT':country}</small></span></motion.div>)}</div><div className="out-progress"><span>{sent}/5 SENT</span><span>7+ CHAINS</span></div><div className="flow-status-track"><motion.i animate={{width:`${sent*20}%`}} transition={{duration:reduce?0:.5}}/></div><Button type="button" variant="brand" className={step===1?'out-approve is-pressing':'out-approve'} disabled aria-label="Illustrative batch approval animation">{step===0?'Approve batch':'Batch approved'} <Check size={16}/></Button></div></div></div>;
+}
+const currencies=[['AED','د.إ','36,333.00'],['USD','$','9,900.00'],['EUR','€','9,108.00'],['GBP','£','7,821.00'],['INR','₹','827,442.00'],['SGD','S$','13,365.00']] as const;
+export function FiatOutSignature() {
+  const {ref,step,reduce}=useLoop(6,2600); const [code,symbol,value]=currencies[step] ?? currencies[0];
+ return <div className="flow-signature fiat-signature" ref={ref} aria-label="Illustrative USDT conversion and bank transfer"><div className="fiat-stage"><div className="fiat-source"><span>YOUR CRYPTO BALANCE</span><strong>10,000 <small>USDT</small></strong><span>ARARATPAY · 1% FEE</span></div><div className="fiat-exchange"><span>CONVERT TO</span><motion.strong key={code} initial={reduce?false:{rotateX:-80,opacity:0}} animate={{rotateX:0,opacity:1}} transition={{duration:.45}}>{code}</motion.strong><small>ILLUSTRATIVE RATES</small></div><div className="fiat-bank"><Landmark size={22}/><span>BANK ACCOUNT / ILLUSTRATIVE</span><motion.div key={code} initial={reduce?false:{x:30,opacity:0}} animate={{x:0,opacity:1}} transition={{delay:.5}}><Check size={18}/><span>Transfer received<strong>{symbol} {value}</strong></span></motion.div><small>ILLUSTRATIVE BANK TRANSFER</small></div></div></div>;
+}
+const merchants=[['Software',49],['Cloud hosting',89],['Flight',125]] as const;
+export function CardsSignature() {
+  const {ref,step,reduce}=useLoop(9,850); const index=Math.floor(step/3); const [merchant,amount]=merchants[index] ?? merchants[0]; const approved=step%3===2;
+ const [tilt,setTilt]=useState({x:0,y:0});
+ return <div className="flow-signature cards-signature" ref={ref} aria-label="Illustrative crypto-funded card payment settles in USDC"><div className="cards-stage"><motion.div className="cards-card" onPointerMove={e=>{if(reduce)return;const b=e.currentTarget.getBoundingClientRect();setTilt({x:((e.clientY-b.top)/b.height-.5)*-10,y:((e.clientX-b.left)/b.width-.5)*12})}} onPointerLeave={()=>setTilt({x:0,y:0})} animate={{y:reduce?0:step%3===1?33:-7,rotateX:tilt.x,rotateY:tilt.y,rotateZ:step%3===1?5:-4}} transition={{duration:.65}}><div className="cards-card-top"><AraratMark/><span>ARARATPAY</span></div><div className="cards-card-chip">▦ <Radio size={19}/></div><strong>•••• 2041</strong><div className="cards-card-bottom"><span>FINANCE TEAM</span><span>ILLUSTRATIVE CARD</span></div></motion.div><div className="cards-terminal"><CreditCard size={22}/><span>ARARATPAY / ILLUSTRATIVE</span><div>{approved?<><Check size={20}/> SETTLED</>:'PROCESSING…'}</div><strong>{amount.toFixed(2)} USDC</strong><small>CRYPTO-FUNDED · ILLUSTRATIVE</small></div><motion.div className="cards-notification" key={merchant} initial={reduce?false:{opacity:0,y:18}} animate={{opacity:approved?1:0,y:approved?0:18}}><Check size={16}/><span>Card •••• 2041 · {merchant}<strong>−{amount.toFixed(2)} USDC</strong></span></motion.div><div className="cards-balance">BALANCE / ILLUSTRATIVE <strong>{(2500-amount).toFixed(2)} USDC</strong></div></div></div>;
+}

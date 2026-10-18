@@ -1,0 +1,415 @@
+/**
+ * Centralized Design System Tokens
+ * Anthropic-Inspired Design System
+ * Single Source of Truth
+ */
+
+:root {
+  /* =========================================================================
+     A. COLOR PRIMITIVES - Exact Reference Values
+     ========================================================================= */
+  --color-slate-dark: #141413;
+  --color-ivory-medium: #f0eee6;
+  --color-ivory-light: #faf9f5;
+  --color-cloud-medium: #b0aea5;
+  --color-cloud-dark: #87867f;
+  --color-stone: #cccbc8;
+  --color-slate-medium: #3d3d3a;
+  --color-oat-warm: #e3dacc;
+  --color-manilla: #f5e3c7;
+  --color-clay: #d97757;
+  --color-clay-deep: #c6613f;
+
+  /* Backward compatibility aliases */
+  --brand-ivory: var(--color-ivory-medium);
+  --brand-olive: var(--color-clay);
+  --brand-lavender: var(--color-oat-warm);
+  --brand-periwinkle: var(--color-clay);
+  --neutral-dark-base: var(--color-slate-dark);
+  --neutral-dark-surface: var(--color-slate-dark);
+  --neutral-dark-card: #1c1c1b;
+  --neutral-light-base: var(--color-ivory-medium);
+  --neutral-light-surface: var(--color-ivory-light);
+  --neutral-light-card: var(--color-ivory-light);
+
+  /* =========================================================================
+     B. FONT FAMILIES
+     - Editorial serif: body copy, paragraphs, editorial content, descriptive text, supporting copy
+     - UI sans-serif: navigation, buttons, form controls, labels, badges, interface chrome
+     - Technical monospace: code blocks, technical snippets only
+     ========================================================================= */
+  --font-serif: 'Anthropic Serif', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: 'Anthropic Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Anthropic Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --font-editorial: var(--font-serif);
+  --font-ui: var(--font-sans);
+  --font-technical: var(--font-mono);
+  --font-display: var(--font-serif);
+
+  /* =========================================================================
+     C. TYPOGRAPHY WEIGHTS
+     ========================================================================= */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* =========================================================================
+     C. FONT SIZES & TYPOGRAPHY SCALE (Exact Values)
+     ========================================================================= */
+  /* Caption: 12px, line-height 1.4, letter-spacing -0.24px */
+  --font-size-caption: 12px;
+  --line-height-caption: 1.4;
+  --letter-spacing-caption: -0.24px;
+
+  /* Small body / UI: 16px, line-height 1, letter-spacing -0.08px */
+  --font-size-small: 16px;
+  --line-height-small: 1;
+  --letter-spacing-small: -0.08px;
+
+  /* Body: 20px, line-height 1.4, letter-spacing 0px */
+  --font-size-body: 20px;
+  --line-height-body: 1.4;
+  --letter-spacing-body: 0px;
+
+  /* Subheading: 24px, line-height 1.3, letter-spacing -0.05px */
+  --font-size-subheading: 24px;
+  --line-height-subheading: 1.3;
+  --letter-spacing-subheading: -0.05px;
+
+  /* Heading: 61px, line-height 1.1, letter-spacing -0.12px */
+  --font-size-heading: 61px;
+  --line-height-heading: 1.1;
+  --letter-spacing-heading: -0.12px;
+
+  /* Display: 68px, line-height 1.1, letter-spacing 0px */
+  --font-size-display: 68px;
+  --line-height-display: 1.1;
+  --letter-spacing-display: 0px;
+
+  /* =========================================================================
+     D. BORDER RADIUS
+     - Navigation: 0px
+     - Links: 0px
+     - Badges: 0px
+     - Standard small radius: 8px
+     - Outlined buttons: 12px
+     - Cards: 24px
+     - Large panels: 24px
+     - Filled ivory buttons: 8px bottom corners only (0 0 8px 8px)
+     ========================================================================= */
+  --radius-nav: 0px;
+  --radius-link: 0px;
+  --radius-badge: 0px;
+  --radius-sm: 8px;
+  --radius-md: 8px;
+  --radius-button: 8px;
+  --radius-button-outline: 12px;
+  --radius-button-ivory: 0 0 8px 8px;
+  --radius-card: 24px;
+  --radius-panel: 24px;
+  --radius-lg: 24px;
+  --radius-xl: 24px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  --radius: 8px;
+
+  /* =========================================================================
+     E. BORDERS & DIVIDERS
+     ========================================================================= */
+  --border-width: 1px;
+  --border-style: solid;
+  --border-hairline: 1px solid var(--color-stone);
+  --border-button-outline: 1px solid var(--color-cloud-dark);
+  --border-dark-divider: 1px solid var(--color-slate-medium);
+
+  /* =========================================================================
+     F. SPACING (4px base unit) & LAYOUT
+     ========================================================================= */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-76: 76px;
+  --space-100: 100px;
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-19: 76px;
+  --spacing-25: 100px;
+
+  --max-content-width: 1280px;
+
+  /* =========================================================================
+     SEMANTIC ROLES - LIGHT MODE (Default on :root)
+     - Main light canvas: #f0eee6
+     - Cards and standard panels: #faf9f5
+     - Featured surfaces: #f5e3c7
+     - Secondary grouped surfaces: #e3dacc
+     - Primary text and headings: #141413
+     - Muted text and secondary labels: #b0aea5
+     - Borders and dividers: #cccbc8
+     - Dark footer and dark utility surfaces: #141413
+     - Clay CTA: #d97757 (hover/pressed: #c6613f)
+     ========================================================================= */
+  --canvas: var(--color-ivory-medium);
+  --background: var(--color-ivory-medium);
+  --foreground: var(--color-slate-dark);
+
+  /* Surfaces */
+  --surface: var(--color-ivory-light);
+  --surface-card: var(--color-ivory-light);
+  --surface-featured: var(--color-manilla);
+  --surface-secondary: var(--color-oat-warm);
+  --surface-grouped: var(--color-oat-warm);
+  --surface-dark: var(--color-slate-dark);
+  --surface-warm: var(--color-manilla);
+  --surface-accent: var(--color-oat-warm);
+  --surface-subtle: var(--color-ivory-light);
+
+  --card: var(--color-ivory-light);
+  --card-foreground: var(--color-slate-dark);
+  --popover: var(--color-ivory-light);
+  --popover-foreground: var(--color-slate-dark);
+
+  /* Text */
+  --text-primary: var(--color-slate-dark);
+  --text-secondary: var(--color-slate-medium);
+  --text-muted: var(--color-cloud-medium);
+
+  /* Borders & Inputs */
+  --border: var(--color-stone);
+  --border-subtle: var(--color-stone);
+  --divider: var(--color-stone);
+  --input: var(--color-stone);
+  --ring: var(--color-clay);
+
+  /* Primary CTA (Clay) */
+  --primary: var(--color-clay);
+  --primary-hover: var(--color-clay-deep);
+  --primary-light: var(--color-manilla);
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: var(--color-oat-warm);
+  --secondary-hover: #d5cbba;
+  --secondary-foreground: var(--color-slate-dark);
+
+  --muted: var(--color-oat-warm);
+  --muted-foreground: var(--color-cloud-dark);
+
+  --accent: var(--color-manilla);
+  --accent-soft: rgba(245, 227, 199, 0.45);
+  --accent-foreground: var(--color-slate-dark);
+
+  --destructive: var(--color-clay-deep);
+  --destructive-foreground: #ffffff;
+
+  --band-label: var(--color-clay);
+  --focus-ring: var(--color-clay);
+  --check-fill: var(--color-clay);
+  --check-foreground: var(--color-clay);
+  --check-on-fill: #ffffff;
+
+  /* Button tokens */
+  --cta-clay: var(--color-clay);
+  --cta-clay-hover: var(--color-clay-deep);
+  --cta-clay-foreground: #ffffff;
+
+  --glass-button-bg: transparent;
+  --glass-button-hover: var(--color-oat-warm);
+  --glass-button-border: var(--color-cloud-dark);
+
+  --invoice-stub-surface: var(--color-ivory-light);
+  --qr-paper: var(--color-ivory-light);
+  --qr-ink: var(--color-slate-dark);
+  --qr-border: var(--color-stone);
+
+  /* Visual chart & scene tokens */
+  --chart-1: var(--color-clay);
+  --chart-2: var(--color-manilla);
+  --chart-3: var(--color-oat-warm);
+  --chart-4: var(--color-slate-dark);
+  --chart-5: var(--color-cloud-dark);
+}
+
+/* =========================================================================
+   CENTRAL RESPONSIVE TYPOGRAPHY
+   ========================================================================= */
+@media (max-width: 768px) {
+  :root {
+    --font-size-heading: clamp(32px, 8vw, 48px);
+    --font-size-display: clamp(36px, 9vw, 54px);
+    --font-size-body: 18px;
+  }
+}
+
+/* =========================================================================
+   LIGHT THEME OVERRIDES
+   - Canvas: Warm Ivory #f0eee6
+   - Primary text & headings: Near-black #141413
+   - Cards & panels: Ivory Light #faf9f5
+   - Warm neutral borders: Stone #cccbc8
+   - Featured surfaces: Manilla #f5e3c7
+   - Grouped surfaces: Oat Warm #e3dacc
+   - Dark utility / footer: Slate Dark #141413
+   - Clay CTA: #d97757 (hover: #c6613f)
+   ========================================================================= */
+html[data-theme="light"],
+[data-theme="light"] {
+  color-scheme: light;
+
+  --canvas: var(--color-ivory-medium);
+  --background: var(--color-ivory-medium);
+  --foreground: var(--color-slate-dark);
+  --surface: var(--color-ivory-light);
+  --surface-card: var(--color-ivory-light);
+  --surface-featured: var(--color-manilla);
+  --surface-secondary: var(--color-oat-warm);
+  --surface-grouped: var(--color-oat-warm);
+  --surface-dark: var(--color-slate-dark);
+  --surface-warm: var(--color-manilla);
+  --surface-accent: var(--color-oat-warm);
+  --surface-subtle: var(--color-ivory-light);
+
+  --card: var(--color-ivory-light);
+  --card-foreground: var(--color-slate-dark);
+  --popover: var(--color-ivory-light);
+  --popover-foreground: var(--color-slate-dark);
+
+  --text-primary: var(--color-slate-dark);
+  --text-secondary: var(--color-slate-medium);
+  --text-muted: var(--color-cloud-medium);
+
+  --border: var(--color-stone);
+  --border-subtle: var(--color-stone);
+  --divider: var(--color-stone);
+  --input: var(--color-stone);
+  --ring: var(--color-clay);
+
+  --primary: var(--color-clay);
+  --primary-hover: var(--color-clay-deep);
+  --primary-light: var(--color-manilla);
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--color-oat-warm);
+  --secondary-hover: #d5cbba;
+  --secondary-foreground: var(--color-slate-dark);
+
+  --muted: var(--color-oat-warm);
+  --muted-foreground: var(--color-cloud-dark);
+
+  --accent: var(--color-manilla);
+  --accent-soft: rgba(245, 227, 199, 0.45);
+  --accent-foreground: var(--color-slate-dark);
+
+  --destructive: var(--color-clay-deep);
+  --destructive-foreground: #ffffff;
+
+  --band-label: var(--color-clay);
+  --focus-ring: var(--color-clay);
+  --check-fill: var(--color-clay);
+  --check-foreground: var(--color-clay);
+  --check-on-fill: #ffffff;
+
+  --glass-button-bg: transparent;
+  --glass-button-hover: var(--color-oat-warm);
+  --glass-button-border: var(--color-cloud-dark);
+
+  --chart-1: var(--color-clay);
+  --chart-2: var(--color-manilla);
+  --chart-3: var(--color-oat-warm);
+  --chart-4: var(--color-slate-dark);
+  --chart-5: var(--color-cloud-dark);
+}
+
+/* =========================================================================
+   DARK THEME OVERRIDES
+   - Canvas: Slate Dark #141413
+   - Text: Ivory Light #faf9f5
+   - Cards: Contrasting dark cards #1c1c1b
+   - Visible dark-theme borders: Slate Medium #3d3d3a
+   - Featured surfaces: Dark warm tint #26221d
+   - Grouped surfaces: Dark neutral tint #22211f
+   - Clay CTA: #d97757 (hover: #c6613f)
+   ========================================================================= */
+html[data-theme="dark"],
+[data-theme="dark"],
+.dark {
+  color-scheme: dark;
+
+  --canvas: var(--color-slate-dark);
+  --background: var(--color-slate-dark);
+  --foreground: var(--color-ivory-light);
+  --surface: #1c1c1b;
+  --surface-card: #1c1c1b;
+  --surface-featured: #26221d;
+  --surface-secondary: #22211f;
+  --surface-grouped: #22211f;
+  --surface-dark: var(--color-slate-dark);
+  --surface-warm: #26221d;
+  --surface-accent: #22211f;
+  --surface-subtle: #1c1c1b;
+
+  --card: #1c1c1b;
+  --card-foreground: var(--color-ivory-light);
+  --popover: #1c1c1b;
+  --popover-foreground: var(--color-ivory-light);
+
+  --text-primary: var(--color-ivory-light);
+  --text-secondary: var(--color-cloud-medium);
+  --text-muted: var(--color-cloud-dark);
+
+  --border: var(--color-slate-medium);
+  --border-subtle: var(--color-slate-medium);
+  --divider: var(--color-slate-medium);
+  --input: var(--color-slate-medium);
+  --ring: var(--color-clay);
+
+  --primary: var(--color-clay);
+  --primary-hover: var(--color-clay-deep);
+  --primary-light: #26221d;
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--color-slate-medium);
+  --secondary-hover: #4a4a46;
+  --secondary-foreground: var(--color-ivory-light);
+
+  --muted: #1c1c1b;
+  --muted-foreground: var(--color-cloud-dark);
+
+  --accent: #26221d;
+  --accent-soft: rgba(217, 119, 87, 0.15);
+  --accent-foreground: var(--color-ivory-light);
+
+  --destructive: var(--color-clay-deep);
+  --destructive-foreground: #ffffff;
+
+  --band-label: var(--color-clay);
+  --focus-ring: var(--color-clay);
+  --check-fill: var(--color-clay);
+  --check-foreground: var(--color-clay);
+  --check-on-fill: #ffffff;
+
+  --glass-button-bg: transparent;
+  --glass-button-hover: #26221d;
+  --glass-button-border: var(--color-cloud-dark);
+
+  --invoice-stub-surface: #1c1c1b;
+  --qr-paper: #1c1c1b;
+  --qr-ink: var(--color-ivory-light);
+  --qr-border: var(--color-slate-medium);
+
+  --chart-1: var(--color-clay);
+  --chart-2: var(--color-manilla);
+  --chart-3: var(--color-oat-warm);
+  --chart-4: var(--color-slate-dark);
+  --chart-5: var(--color-cloud-dark);
+}

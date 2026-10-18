@@ -1,0 +1,540 @@
+/* Reusable presentation roles.
+   All rules honor the centralized Anthropic-inspired design system.
+   Slate Dark: #141413 | Ivory Medium: #f0eee6 | Ivory Light: #faf9f5 | Stone: #cccbc8 | Clay: #d97757
+*/
+
+html[data-theme="light"] [data-band] {
+  --background: var(--color-ivory-medium);
+  --foreground: var(--color-slate-dark);
+  --muted-foreground: var(--color-cloud-dark);
+  --text-muted: var(--color-cloud-medium);
+  --band-label: var(--color-clay);
+  --primary: var(--color-clay);
+  --primary-hover: var(--color-clay-deep);
+  --primary-light: var(--color-manilla);
+  --primary-foreground: #FFFFFF;
+  --card: var(--color-ivory-light);
+  --elevated: var(--color-ivory-light);
+  --border: var(--color-stone);
+  --input: var(--border);
+  --accent: var(--color-manilla);
+  --accent-foreground: var(--foreground);
+  --secondary: var(--color-oat-warm);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--color-oat-warm);
+  --check-foreground: var(--color-clay);
+  --check-fill: var(--color-clay);
+  --check-on-fill: #FFFFFF;
+  color: var(--foreground);
+  background: var(--background) !important;
+  color-scheme: light;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html[data-theme="light"] [data-band="white"] {
+  --background: var(--color-ivory-medium);
+}
+
+html[data-theme="light"] [data-band="light"] {
+  --background: var(--color-ivory-light);
+  --primary-light: var(--color-manilla);
+}
+
+html[data-theme="light"] [data-band="warm"] {
+  --background: var(--color-oat-warm);
+  --card: var(--color-ivory-light);
+}
+
+html[data-theme="light"] [data-band="dark"] {
+  --background: var(--color-slate-dark);
+  --foreground: var(--color-ivory-light);
+  --muted-foreground: var(--color-cloud-medium);
+  --text-muted: var(--color-cloud-dark);
+  --band-label: var(--color-clay);
+  --primary: var(--color-clay);
+  --primary-hover: var(--color-clay-deep);
+  --primary-light: #26221d;
+  --primary-foreground: #FFFFFF;
+  --card: #1c1c1b;
+  --elevated: var(--card);
+  --border: var(--color-slate-medium);
+  --input: var(--border);
+  --accent: #26221d;
+  --check-foreground: var(--color-clay);
+}
+
+html[data-theme="light"] .home-sheet[data-band] > :is(section,div),
+html[data-theme="light"] .home-sheet[data-band] > div > :is(section,div):not(.shell) {
+  background-color: var(--background) !important;
+  border-radius: 0;
+}
+
+html[data-theme="light"] [data-band] :is(h1,h2,h3,h4,p) {
+  color: var(--foreground);
+}
+
+html[data-theme="light"] [data-band] p {
+  color: var(--muted-foreground);
+}
+
+html[data-theme="light"] [data-band] :is(.section-kicker,.mono-label,.flow-label,.solutions-section-label,.solutions-heading > span,.solutions-final .shell > span,.solutions-story article > span,.solutions-story > div > span,.security-after-eyebrow,.ledger-heading > span) {
+  color: var(--band-label);
+}
+
+html[data-theme="light"] [data-band] :is(.brand-button,.bg-primary) {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+html[data-theme="light"] [data-band] :is(.glass-button,.border-input) {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+html[data-theme="light"] [data-band] :is(.flow-why-grid article,.flow-method-stage,.solutions-toggle-panel,.ledger-careers article,.security-principles article,.pp-feature,.pp-usecase,.api-tool,.platform-card) {
+  background: var(--card);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card, 24px);
+  box-shadow: none;
+}
+
+/* Financial and technical surfaces keep clean card local roles */
+html[data-theme="light"] [data-band] :is(.invoice-object,.checkout-widget,.flow-dash,.flow-receipt,.code-window,.flow-code,.fee-result,.radar-panel,.api-code-panel,.api-extra-code,.api-table-wrap,.api-inline-note,.price-receipt,.flow-why-grid article:has(.flow-bars)) {
+  --background: var(--color-ivory-light);
+  --foreground: var(--color-slate-dark);
+  --muted-foreground: var(--color-cloud-dark);
+  --text-muted: var(--color-cloud-medium);
+  --band-label: var(--color-clay);
+  --card: var(--color-ivory-light);
+  --elevated: var(--color-ivory-light);
+  --primary: var(--color-clay);
+  --primary-light: var(--color-manilla);
+  --primary-foreground: #FFFFFF;
+  --border: var(--color-stone);
+  --input: var(--border);
+  --check-foreground: var(--color-clay);
+  --invoice-stub-surface: var(--color-ivory-light);
+  color: var(--foreground);
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+html[data-theme="light"] [data-band] :is(.code-window pre,.code-response,.code-response pre,.flow-code pre,.api-code-panel,.api-extra-code) {
+  background: var(--card);
+  color: var(--foreground);
+}
+
+html[data-theme="light"] [data-band] :is(.api-code-panel,.api-extra-code) {
+  --api-code-bg: var(--color-ivory-light);
+  --api-code-surface: var(--color-ivory-light);
+}
+
+html[data-theme="light"] [data-band] .flow-end .flow-film,
+html[data-theme="light"] [data-band].flow-end .flow-film,
+html[data-theme="light"] [data-band].solutions-final > .solutions-media {
+  display: none;
+}
+
+html[data-theme="light"] [data-band] :is(.final-grid,.final-peak > i) {
+  opacity: .12;
+}
+
+html[data-theme="light"] [data-band] .invoice-step {
+  opacity: 1;
+}
+
+html[data-theme="light"] [data-band] .invoice-step[data-active="true"] {
+  background: var(--card);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+html[data-theme="light"] .site-footer {
+  --background: var(--color-slate-dark);
+  --foreground: var(--color-ivory-light);
+  --muted-foreground: var(--color-cloud-medium);
+  --primary: var(--color-clay);
+  --border: var(--color-slate-medium);
+  background: var(--color-slate-dark) !important;
+  color: var(--color-ivory-light) !important;
+  border-top: var(--border-dark-divider) !important;
+}
+
+html[data-theme="light"] .site-footer .ararat-wordmark {
+  color: var(--foreground);
+}
+
+html[data-theme="light"] .site-header--scrolled {
+  background: color-mix(in srgb, var(--background) 90%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+html[data-theme="light"] .api-extras {
+  max-width: none;
+  padding-inline: 0;
+}
+
+html[data-theme="light"] .api-extra-section {
+  padding-inline: max(24px, calc((100vw - 1340px) / 2));
+}
+
+html[data-theme="light"] [data-band].ledger-day {
+  --ledger-bg: var(--background);
+  background: var(--background);
+}
+
+html[data-theme="light"] [data-band] .ledger-day-stage {
+  background: var(--card);
+  color: var(--foreground);
+}
+
+html[data-theme="light"] [data-band] .ledger-events > div {
+  opacity: 1 !important;
+}
+
+html[data-theme="light"] [data-band] :is(.ledger-clock,.ledger-events > div) {
+  background: var(--secondary);
+}
+
+html[data-theme="light"] [data-band] :is(.ledger-events small,.ledger-clock small,.ledger-clock > span,.ledger-running > span,.ledger-running small,.flow-method-copy > span,.flow-method-copy small,.flow-slider-ends) {
+  color: var(--muted-foreground);
+}
+
+html[data-theme="light"] .combined-security-grid .developer-section[data-surface="light"] {
+  background: var(--background);
+}
+
+html[data-theme="light"] :is(.api-right,.api-code-panel,.api-extra-code) {
+  --api-code-bg: var(--color-ivory-light);
+  --api-code-surface: var(--color-ivory-light);
+  --api-code-border: var(--color-stone);
+  --api-code-text: var(--color-slate-dark);
+  --api-code-muted: var(--color-cloud-dark);
+  --api-string: var(--color-clay);
+  --api-key: var(--color-clay);
+  --api-number: var(--color-clay);
+  --api-keyword: var(--color-clay);
+  --api-post: var(--color-clay);
+  --api-get: var(--color-clay);
+  --api-delete: var(--color-clay-deep);
+  --primary: var(--color-clay);
+  --primary-foreground: #FFFFFF;
+  background: var(--api-code-bg);
+  color: var(--api-code-text);
+}
+
+html[data-theme="light"] .site-footer input {
+  --foreground: var(--color-ivory-light);
+  --muted-foreground: var(--color-cloud-medium);
+  color: var(--foreground);
+}
+
+html[data-theme="light"] [data-band="dark"] {
+  --band-label: var(--color-clay);
+  --primary-light: #26221d;
+}
+
+html[data-theme="light"] [data-band="dark"] :is(.platform-frame,.platform-card,.flow-map,.flow-currency,.flow-card-visual,.flow-fan-card,.ledger-careers article,.api-status,.security-principles article) {
+  --frosted-surface: #1c1c1b;
+  background: var(--frosted-surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+html[data-theme="light"] [data-band="light"] :is(.text-primary,.faq-index,.d-demo,.d-eyebrow,.d-avatar,.flow-slider-label strong) {
+  color: var(--color-clay);
+}
+
+html[data-theme="light"] [data-band] .d-feature-chips > span {
+  background: var(--card);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+
+html[data-theme="light"] [data-band] :is(.ledger-flip-back,.ledger-flip:first-child .ledger-flip-front) :is(p,strong,em,i) {
+  color: var(--primary-foreground);
+}
+
+html[data-theme="light"] [data-band].ledger-closing .shell > div:last-child a:nth-child(2) {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+html[data-theme="light"] [data-band="dark"] .api-method {
+  color: var(--foreground);
+}
+
+html[data-theme="light"] [data-band="dark"] .radar-label.is-active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+html[data-theme="light"] [data-band] .solutions-scene-band .shell > span,
+html[data-theme="light"] [data-band].solutions-scene-band .shell > span {
+  color: var(--band-label);
+}
+
+html[data-theme="light"] .home-sheet[data-band] .use-gallery-mobile {
+  overflow: clip;
+}
+
+html[data-theme="light"] .home-sheet[data-band] .d-frame {
+  overflow: hidden;
+}
+
+html[data-theme="light"] .home-sheet[data-band] .d-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+html[data-theme="light"] .home-sheet[data-band] {
+  overflow-x: clip;
+}
+
+html[data-theme="light"] [data-band="light"] {
+  --primary-light: var(--color-manilla);
+}
+
+html[data-theme="light"] [data-band="light"] :is(.invoice-heading .section-kicker span,.invoice-step-number,.invoice-step-label,.d-frame .is-selected,.d-country-icon,.flow-faq-links > a > span,.flow-other-grid > a > span,.ledger-trust span,.price-flow-grid strong,.glass-button) {
+  color: var(--color-clay);
+}
+
+html[data-theme="light"] [data-band="dark"] :is(.solutions-phone,.solutions-builder-footer,.solutions-toggle,.solutions-toggle-panel) {
+  background: var(--background);
+}
+
+html[data-theme="light"] [data-band="dark"] .solutions-builder-chips button.is-active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+html[data-theme="light"] [data-band] .solutions-photo-strip button {
+  --foreground: var(--color-slate-dark);
+  --muted-foreground: var(--color-cloud-dark);
+  background-color: var(--color-ivory-light);
+}
+
+html[data-theme="light"] [data-band] .api-method.method-post {
+  color: var(--color-clay);
+}
+
+html[data-theme="light"] [data-band="dark"] .api-method.method-post {
+  color: var(--foreground);
+}
+
+html[data-theme="light"] [data-band="light"].ledger-closing .shell > div:last-child a:nth-child(2) {
+  color: var(--color-clay);
+}
+
+html[data-theme="light"] [data-band="light"] :is(.flow-faq button span,.invoice-section .section-kicker,.invoice-section .section-kicker span,.invoice-section .section-kicker strong,.invoice-section .section-kicker b,.invoice-step-title span,.checkout-widget .is-active,.d-frame .is-selected span) {
+  color: var(--color-clay) !important;
+}
+
+html[data-theme="light"] [data-band="dark"] :is(.solutions-builder-chips button,.solutions-toggle-panel label) {
+  background: var(--background);
+}
+
+html[data-theme="light"] [data-band="light"] :is(.invoice-stage-heading,.invoice-step-title span) {
+  color: var(--color-clay);
+}
+
+html[data-theme="light"] [data-band="light"] .invoice-stage-heading span {
+  color: var(--color-clay) !important;
+}
+
+/* Explicit light surfaces isolate nested cards from containing band */
+html[data-theme="light"] [data-band] [data-surface="light"] {
+  --background: var(--color-ivory-light);
+  --card: var(--color-ivory-light);
+  --elevated: var(--color-ivory-light);
+  --foreground: var(--color-slate-dark);
+  --card-foreground: var(--color-slate-dark);
+  --popover-foreground: var(--color-slate-dark);
+  --muted-foreground: var(--color-cloud-dark);
+  --text-muted: var(--color-cloud-medium);
+  --band-label: var(--color-clay);
+  --primary: var(--color-clay);
+  --primary-hover: var(--color-clay-deep);
+  --primary-light: var(--color-manilla);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--color-oat-warm);
+  --secondary-foreground: var(--color-slate-dark);
+  --accent: var(--color-manilla);
+  --accent-foreground: var(--color-slate-dark);
+  --muted: var(--color-oat-warm);
+  --border: var(--color-stone);
+  --input: var(--border);
+  --ring: var(--color-clay);
+  --hl: var(--color-slate-dark);
+  --shade: var(--color-slate-dark);
+  --glass-bg: var(--color-ivory-light);
+  --glass-edge: var(--border);
+  --glass-shadow: none;
+  --success: var(--color-clay);
+  --warning: var(--color-clay-deep);
+  --check-foreground: var(--color-clay);
+  --invoice-stub-surface: var(--color-ivory-light);
+  color: var(--foreground);
+  background-color: var(--card);
+  color-scheme: light;
+}
+
+html[data-theme="light"] [data-band] [data-surface="light"] :is(.section-kicker,.mono-label,.use-gallery-detail-copy span) {
+  color: var(--band-label);
+}
+
+html[data-theme="light"] [data-band] [data-surface="light"] :is(input,textarea)::placeholder {
+  color: var(--muted-foreground);
+  opacity: 1;
+}
+
+html[data-theme="light"] [data-band] .use-gallery-detail {
+  opacity: 1 !important;
+}
+
+/* Keep nested shells inside their own grid track, adhering to max content width */
+html[data-theme="light"] .home-sheets .shell {
+  width: min(calc(100% - 96px), var(--max-content-width, 1280px));
+  min-width: 0;
+}
+
+html[data-theme="light"] .home-sheets .combined-security :is(.combined-heading,.combined-security-grid) {
+  width: min(calc(100% - 96px), 1200px);
+  margin-inline: auto;
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid {
+  gap: 56px;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid > .page-section {
+  padding: 0;
+  min-width: 0;
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid > .developer-section {
+  padding: 36px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card, 24px);
+  box-shadow: none;
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid > section > .shell {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  min-width: 0;
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid .code-window {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid .code-top {
+  padding-inline: 14px;
+  gap: 4px;
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid .code-tabs {
+  min-width: 0;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid .code-tabs button {
+  padding-inline: 8px;
+}
+
+html[data-theme="light"] .home-sheets .combined-security-grid .code-window pre {
+  max-width: 100%;
+  overflow-x: auto;
+  font-size: 12px;
+}
+
+html[data-theme="light"] .home-sheet[data-band] {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+html[data-theme="light"] [data-band] :is(.section-heading,.combined-heading,.fees-layout,.security-copy,.developer-copy) {
+  min-width: 0;
+}
+
+@media (max-width: 1023px) {
+  html[data-theme="light"] .home-sheets .shell,
+  html[data-theme="light"] .home-sheets .combined-security :is(.combined-heading,.combined-security-grid) {
+    width: calc(100% - 64px);
+  }
+  html[data-theme="light"] .home-sheets .combined-security-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+  html[data-theme="light"] .home-sheets .combined-security-grid > .developer-section {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  html[data-theme="light"] .home-sheets .shell,
+  html[data-theme="light"] .home-sheets .combined-security :is(.combined-heading,.combined-security-grid) {
+    width: calc(100% - 48px);
+  }
+  html[data-theme="light"] .home-sheets .combined-security-grid .code-tabs button {
+    padding-inline: 5px;
+    font-size: 10px;
+  }
+  html[data-theme="light"] .home-sheets .combined-security-grid .code-top {
+    padding-inline: 8px;
+  }
+  html[data-theme="light"] .home-sheets .combined-security-grid .code-window :is(pre,.code-file),
+  html[data-theme="light"] .home-sheets .combined-security-grid .code-response > span {
+    padding-inline: 12px;
+  }
+}
+
+html[data-theme="light"] [data-band] .ledger-events em {
+  background: var(--card);
+}
+
+html[data-theme="light"] [data-band] [data-surface="light"].solutions-phone {
+  background: var(--card);
+}
+
+html[data-theme="light"] [data-band] .solutions-phone-screen > div:nth-of-type(1) span {
+  color: var(--color-clay);
+}
+
+html[data-theme="light"] [data-band] .security-status--progress {
+  --warning: var(--color-clay-deep);
+}
+
+html[data-theme="light"] [data-band] .solutions-builder-chips button {
+  --primary: var(--color-clay);
+}
+
+html[data-theme="light"] [data-band="dark"] .solutions-builder-chips button {
+  --primary: var(--color-clay);
+}
+
+html[data-theme="light"] .home-sheets [data-band] .platform-heading h2 span {
+  background: none;
+  color: var(--primary);
+}
+
+html[data-theme="light"] [data-band="dark"] .flow-orbit-coin {
+  --frosted-surface: #1c1c1b;
+  background: var(--frosted-surface);
+}
+
+html[data-theme="light"] [data-band="light"] .solutions-matrix-row > span {
+  color: var(--band-label);
+}
+
+html[data-theme="light"] [data-band="light"] .solutions-matrix-row.is-active > span {
+  color: var(--band-label);
+}

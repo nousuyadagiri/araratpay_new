@@ -1,0 +1,27 @@
+import inMp4 from '@/assets/flows/hero/crypto-in-hero-1080.mp4.asset.json';
+import inWebm from '@/assets/flows/hero/crypto-in-hero-1080.webm.asset.json';
+import inSmallMp4 from '@/assets/flows/hero/crypto-in-hero-720.mp4.asset.json';
+import inSmallWebm from '@/assets/flows/hero/crypto-in-hero-720.webm.asset.json';
+import inPoster from '@/assets/flows/hero/crypto-in-hero-poster.webp.asset.json';
+import outMp4 from '@/assets/flows/hero/crypto-out-hero-1080.mp4.asset.json';
+import outWebm from '@/assets/flows/hero/crypto-out-hero-1080.webm.asset.json';
+import outSmallMp4 from '@/assets/flows/hero/crypto-out-hero-720.mp4.asset.json';
+import outSmallWebm from '@/assets/flows/hero/crypto-out-hero-720.webm.asset.json';
+import outPoster from '@/assets/flows/hero/crypto-out-hero-poster.webp.asset.json';
+import fiatMp4 from '@/assets/flows/hero/fiat-out-hero-1080.mp4.asset.json';
+import fiatWebm from '@/assets/flows/hero/fiat-out-hero-1080.webm.asset.json';
+import fiatSmallMp4 from '@/assets/flows/hero/fiat-out-hero-720.mp4.asset.json';
+import fiatSmallWebm from '@/assets/flows/hero/fiat-out-hero-720.webm.asset.json';
+import fiatPoster from '@/assets/flows/hero/fiat-out-hero-poster.webp.asset.json';
+import cardsMp4 from '@/assets/flows/hero/cards-hero-1080.mp4.asset.json';
+import cardsWebm from '@/assets/flows/hero/cards-hero-1080.webm.asset.json';
+import cardsSmallMp4 from '@/assets/flows/hero/cards-hero-720.mp4.asset.json';
+import cardsSmallWebm from '@/assets/flows/hero/cards-hero-720.webm.asset.json';
+import cardsPoster from '@/assets/flows/hero/cards-hero-poster.webp.asset.json';
+import type { FlowFilm } from './FlowMedia';
+
+const film = (mp4: { url: string }, webm: { url: string }, smallMp4: { url: string }, smallWebm: { url: string }, poster: { url: string }): FlowFilm => ({ mp4: mp4.url, webm: webm.url, smallMp4: smallMp4.url, smallWebm: smallWebm.url, poster: poster.url });
+export const cryptoInHero = film(inMp4, inWebm, inSmallMp4, inSmallWebm, inPoster);
+export const cryptoOutHero = film(outMp4, outWebm, outSmallMp4, outSmallWebm, outPoster);
+export const fiatOutHero = film(fiatMp4, fiatWebm, fiatSmallMp4, fiatSmallWebm, fiatPoster);
+export const cardsHero = film(cardsMp4, cardsWebm, cardsSmallMp4, cardsSmallWebm, cardsPoster);
