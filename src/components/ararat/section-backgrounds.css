@@ -1,8 +1,8 @@
 /* Section paint only: inherited panel and control roles remain intact. */
-:root { --section-pale-teal: var(--color-ivory-light, #faf9f5); }
+:root { --section-pale-teal: var(--color-cream-paper); }
 html[data-theme="light"] body main [data-pale-section][data-pale-section] { background-color: var(--section-pale-teal) !important; }
-html[data-theme="light"] body main [data-pale-section] [data-pale-ink][data-pale-ink] { color: var(--color-slate-dark, #141413) !important; }
-html[data-theme="light"] body main .security-after[data-pale-section] .security-faq > :is(h2,.security-after-eyebrow) { color: var(--color-slate-dark, #141413) !important; }
+html[data-theme="light"] body main [data-pale-section] [data-pale-ink][data-pale-ink] { color: var(--color-forest-ink) !important; }
+html[data-theme="light"] body main .security-after[data-pale-section] .security-faq > :is(h2,.security-after-eyebrow) { color: var(--color-forest-ink) !important; }
 html[data-theme="light"] .use-gallery[data-pale-section] .use-gallery-shade {
   background: linear-gradient(0deg, var(--section-pale-teal), transparent 22% 86%, var(--section-pale-teal));
 }

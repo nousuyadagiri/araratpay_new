@@ -1,7 +1,7 @@
 /* The dive owns a dark, isolated palette in both site themes. */
 .security-dive {
-  --background: var(--color-slate-dark); --foreground: var(--color-ivory-light); --card: #1c1c1b; --primary: var(--color-clay);
-  --primary-foreground: #ffffff; --muted-foreground: var(--color-cloud-medium); --border: var(--color-slate-medium); --security-tile-border: var(--color-slate-medium); --security-portal-surface: #1c1c1b;
+  --background: var(--color-slate-dark); --foreground: var(--color-ivory-light); --card: var(--color-dark-surface); --primary: var(--color-clay);
+  --primary-foreground: var(--color-white); --muted-foreground: var(--color-cloud-medium); --border: var(--color-slate-medium); --security-tile-border: var(--color-slate-medium); --security-portal-surface: var(--color-dark-surface);
   position: relative; height: 100svh; min-height: 680px; background: var(--background); color: var(--foreground); isolation: isolate;
 }
 .security-dive-stage { position: relative; height: 100%; width: 100%; overflow: hidden; display: grid; place-items: center; }
@@ -67,9 +67,9 @@
 .security-faq button,
 .security-faq [data-slot="accordion-trigger"] { color: var(--foreground) !important; text-align: left; }
 html[data-theme="light"] .security-faq button,
-html[data-theme="light"] .security-faq [data-slot="accordion-trigger"] { color: var(--color-slate-dark, #141413) !important; }
+html[data-theme="light"] .security-faq [data-slot="accordion-trigger"] { color: var(--color-forest-ink) !important; }
 html[data-theme="dark"] .security-faq button,
-html[data-theme="dark"] .security-faq [data-slot="accordion-trigger"] { color: var(--color-ivory-light, #faf9f5) !important; }
+html[data-theme="dark"] .security-faq [data-slot="accordion-trigger"] { color: var(--color-cream-paper) !important; }
 .security-final { background: var(--background); padding: 90px 0; border-top: 1px solid var(--border); }
 .security-final h2 { font: 700 calc(var(--heading-scale) * clamp(36px, 4vw, 60px))/var(--display-leading) var(--font-display); max-width: 740px; margin: 12px 0 27px; }
 #report { scroll-margin-top: 90px; }

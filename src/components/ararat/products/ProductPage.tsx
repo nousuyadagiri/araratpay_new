@@ -38,7 +38,7 @@ export default function ProductPage({ product }: { product: ProductContent }) {
         <div className="shell pp-hero-inner">
           <Reveal className="pp-hero-copy">
             <span className="hero-eyebrow">FLOW {product.number} · PART OF THE ARARATPAY PLATFORM</span>
-            <h1>{product.title} <span className="hero-word--gradient">{product.accent}</span></h1>
+            <h1>{product.title} <mark className="headline-highlight">{product.accent}</mark></h1>
             <p className="hero-description">{product.subhead}</p>
             <div className="hero-actions"><Button variant="brand" size="hero" onClick={() => action("Get Started")}>Get Started <ArrowUpRight size={18}/></Button><Button variant="glass" size="hero" onClick={() => action("Talk to Sales")}>Talk to Sales</Button></div>
           </Reveal>

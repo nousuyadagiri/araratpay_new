@@ -147,7 +147,7 @@ export function MoneyFlow() {
   };
   return <section ref={sectionRef} id="money-flow" className="invoice-section mf-section" data-step={shown} data-reduced={reduce} aria-label="How value moves" onTouchStart={event => { touchStart.current = event.touches[0]?.clientX ?? null; }} onTouchEnd={onSwipeEnd}>
     <div className="shell invoice-shell">
-      <div className="invoice-intro"><SectionHeading number="01" label="HOW VALUE MOVES" title="From payment to possibility."/><p>One connected flow. Every way to move money.</p></div>
+      <div className="invoice-intro"><SectionHeading number="01" label="HOW VALUE MOVES" title={<>From payment to <mark className="headline-highlight">possibility.</mark></>}/><p>One connected flow. Every way to move money.</p></div>
       <div ref={layoutRef} className="mf-layout">
         <div className="mf-left"><div className="mf-staircase" role="group" aria-label="Payment journey steps">{steps.map((step, index) => <div className="mf-step-position" key={step.name} data-index={index}>
           <Button variant="ghost" type="button" className="mf-step-card" data-step-card={index} data-status={index < shown ? "done" : index === shown ? "active" : "upcoming"} data-surface={index === shown ? "light" : undefined} aria-pressed={shown === index} disabled={reduce} onPointerEnter={() => { interacting.current = true; }} onPointerLeave={() => { interacting.current = false; }} onPointerDown={() => { interacting.current = true; }} onPointerUp={event => { interacting.current = event.currentTarget.matches(":hover, :focus"); }} onPointerCancel={() => { interacting.current = false; }} onFocus={() => { interacting.current = true; }} onBlur={() => { interacting.current = false; }} onClick={() => setActive(index)}>

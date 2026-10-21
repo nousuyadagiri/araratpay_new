@@ -13,10 +13,9 @@ import { Button } from "@/components/ui/button";
 import { AraratMark } from "@/components/ararat/AraratLogo";
 import { SiteEnhancements } from "@/components/ararat/pages/SiteEnhancements";
 import appCss from "../styles.css?url";
-import familjenBold from "@fontsource/familjen-grotesk/files/familjen-grotesk-latin-700-normal.woff2?url";
-import familjenSemiBold from "@fontsource/familjen-grotesk/files/familjen-grotesk-latin-600-normal.woff2?url";
+import bricolageBold from "@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-800-normal.woff2?url";
 import interRegular from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
-import jetBrainsMonoRegular from "@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2?url";
+import robotoMonoRegular from "@fontsource/roboto-mono/files/roboto-mono-latin-400-normal.woff2?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -60,13 +59,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#FFFFFF" },
+      { name: "theme-color", content: "#FCFAF5" },
     ],
     links: [
-      { rel: "preload", as: "font", type: "font/woff2", href: familjenBold, crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: familjenSemiBold, crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: bricolageBold, crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: interRegular, crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: jetBrainsMonoRegular, crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: robotoMonoRegular, crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: appCss,

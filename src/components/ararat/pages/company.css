@@ -9,7 +9,7 @@
   isolation: isolate;
   overflow: hidden;
   background: var(--color-slate-dark);
-  color: #ffffff;
+  color: var(--color-white);
 }
 .company-manifesto {
   display: flex;
@@ -62,10 +62,10 @@
   margin: 28px 0 52px;
   font: 700 calc(var(--heading-scale) * clamp(35px, 4.15vw, 70px))/var(--display-leading)
     var(--font-display);
-  color: #ffffff !important;
+  color: var(--color-white) !important;
 }
 .company-word {
-  color: color-mix(in srgb, #ffffff calc(60% + var(--lit, 0) * 40%), transparent);
+  color: color-mix(in srgb, var(--color-white) calc(60% + var(--lit, 0) * 40%), transparent);
 }
 .company-word--accent {
   color: color-mix(in srgb, var(--primary) calc(67% + var(--lit, 0) * 33%), transparent);
@@ -94,7 +94,7 @@
   );
 }
 .company-manifesto--static .company-word {
-  color: #ffffff;
+  color: var(--color-white);
 }
 .company-manifesto--static .company-word--accent {
   color: var(--primary);

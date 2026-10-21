@@ -1,13 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { lazy, useEffect, useRef, type ReactNode } from "react";
 import SiteHeader from "@/components/ararat/SiteHeader";
-import HeroSection from "@/components/ararat/HeroSection";
+import HeroSection, { HERO_POSTER_URL } from "@/components/ararat/HeroSection";
 import Capabilities from "@/components/ararat/Capabilities";
 import { MoneyFlow } from "@/components/ararat/StatsAndFlow";
 import { UseCases } from "@/components/ararat/UseCasesAndSecurity";
 import { useSiteAction } from "@/components/ararat/pages/PageShell";
 import { NearMount } from "@/components/ararat/NearMount";
-import heroPoster from "@/assets/videos/client-clear-poster.webp.asset.json";
 
 // Below-the-fold sections download and mount ~1 viewport before they scroll into view.
 const DashboardPreview = lazy(() => import("@/components/ararat/DashboardPreview"));
@@ -80,7 +79,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://araratpay.vercel.app/" },
-      { rel: "preload", as: "image", href: heroPoster.url, fetchPriority: "high" },
+      { rel: "preload", as: "image", href: HERO_POSTER_URL, fetchPriority: "high" },
     ],
   }),
   component: Index,

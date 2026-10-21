@@ -246,13 +246,13 @@ export default function SolutionsPrismPage() {
     <>
       <SiteHeader onAction={action} overHero />
       <main className="solutions-page">
-        <div className="solutions-pinned" ref={pin} data-theme="dark">
+        <div className="solutions-pinned" ref={pin}>
           <section id="top" className="solutions-hero">
             <div className="solutions-grid" aria-hidden="true" />
             <div className="shell solutions-hero-inner">
               <div className="solutions-hero-copy">
                 <span className="solutions-kicker">SOLUTIONS · ONE PLATFORM, SIX SIDES</span>
-                <h1>Turn it to your industry.</h1>
+                <h1>Turn it to your <mark className="headline-highlight">industry.</mark></h1>
                 <p>
                   E-commerce, SaaS, marketplaces, remittance, gaming and freelance platforms. One
                   account, four flows, flat 1%.

@@ -10,33 +10,50 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "rounded-[var(--radius-button,8px)] bg-[var(--color-clay,#d97757)] text-white hover:bg-[var(--color-clay-deep,#c6613f)] active:bg-[var(--color-clay-deep,#c6613f)] shadow-none",
+          "rounded-[var(--radius-md,0.375rem)] bg-[var(--color-primary-700,#575757)] text-white hover:bg-[var(--color-primary-800,#424242)] active:bg-[var(--color-primary-800,#424242)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] border-none",
         destructive:
-          "rounded-[var(--radius-button,8px)] bg-destructive text-destructive-foreground shadow-none hover:bg-destructive/90",
+          "rounded-[var(--radius-md,0.375rem)] bg-[var(--color-error,#ef4444)] text-white shadow-none hover:bg-[var(--color-error,#ef4444)]/90",
         outline:
-          "glass-button rounded-[var(--radius-button-outline,12px)] border border-[var(--color-cloud-dark,#87867f)] bg-transparent text-foreground hover:bg-[var(--surface-secondary)] shadow-none",
+          "glass-button rounded-[var(--radius-md,0.375rem)] border border-[var(--color-neutral-700,#575757)] bg-white text-[var(--color-neutral-900,#333333)] hover:bg-[var(--color-neutral-100,#f0f0f0)] shadow-none",
         filledIvory:
-          "button-filled-ivory rounded-t-0 rounded-b-[var(--radius-button,8px)] bg-[var(--color-ivory-light,#faf9f5)] text-[var(--color-slate-dark,#141413)] hover:opacity-90 shadow-none",
+          "button-filled-ivory rounded-[var(--radius-md,0.375rem)] bg-white text-[var(--color-neutral-900,#333333)] border border-[var(--color-neutral-200,#dbdbdb)] hover:bg-[var(--color-neutral-100,#f0f0f0)]",
         secondary:
-          "rounded-[var(--radius-button,8px)] border border-border bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-none",
-        ghost: "rounded-[var(--radius-button,8px)] text-foreground hover:bg-secondary hover:text-foreground",
-        link: "rounded-[var(--radius-link,0px)] text-foreground underline underline-offset-4 hover:underline",
-        brand: "brand-button text-white",
-        glass: "glass-button text-foreground",
-        nav: "nav-button rounded-[var(--radius-nav,0px)] text-foreground hover:underline",
-        iconGlass: "glass-button text-foreground",
-        menuItem: "menu-item text-foreground",
-        mobileNav: "mobile-nav-button text-foreground",
-        mobileSubnav: "mobile-subnav-button text-muted-foreground",
-        textLink: "text-link-button text-foreground",
+          "rounded-[var(--radius-md,0.375rem)] border border-[var(--color-neutral-200,#dbdbdb)] bg-[var(--color-neutral-100,#f0f0f0)] text-[var(--color-neutral-900,#333333)] hover:bg-[var(--color-neutral-200,#dbdbdb)]",
+        pastelMint:
+          "rounded-[var(--radius-md,0.375rem)] bg-[var(--color-accent-100,#fcf3e3)] text-[var(--color-accent-700,#a76c07)] hover:opacity-90 border border-transparent",
+        pastelTeal:
+          "rounded-[var(--radius-md,0.375rem)] bg-[var(--color-secondary-100,#ebe3fc)] text-[var(--color-secondary-700,#3809a4)] hover:opacity-90 border border-transparent",
+        pastelBlush:
+          "rounded-[var(--radius-md,0.375rem)] bg-[var(--color-secondary-200,#d0bff8)] text-[var(--color-secondary-900,#230c5a)] hover:opacity-90 border border-transparent",
+        ghost:
+          "rounded-[var(--radius-md,0.375rem)] bg-transparent text-[var(--color-neutral-900,#333333)] hover:bg-[var(--color-neutral-100,#f0f0f0)]",
+        link:
+          "text-[var(--color-neutral-900,#333333)] underline underline-offset-4 hover:opacity-80 p-0 h-auto font-sans",
+        brand:
+          "brand-button rounded-[var(--radius-md,0.375rem)] bg-[var(--color-primary-700,#575757)] text-white hover:bg-[var(--color-primary-800,#424242)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)]",
+        glass:
+          "glass-button rounded-[var(--radius-md,0.375rem)] border border-[var(--color-neutral-700,#575757)] bg-white text-[var(--color-neutral-900,#333333)] hover:bg-[var(--color-neutral-100,#f0f0f0)] shadow-none",
+        nav:
+          "nav-button rounded-[var(--radius-md,0.375rem)] text-foreground hover:bg-[var(--color-neutral-100,#f0f0f0)]",
+        iconGlass:
+          "glass-button text-foreground rounded-[var(--radius-md,0.375rem)] border border-[var(--color-neutral-200,#dbdbdb)]",
+        menuItem:
+          "menu-item text-foreground rounded-[var(--radius-md,0.375rem)]",
+        mobileNav:
+          "mobile-nav-button text-foreground",
+        mobileSubnav:
+          "mobile-subnav-button text-muted-foreground",
+        textLink:
+          "text-link-button text-[var(--color-neutral-900,#333333)]",
       },
       size: {
-        default: "h-10 px-4 py-2 text-[14px]",
-        sm: "h-8 rounded-[var(--radius-button,8px)] px-3 text-xs",
-        lg: "h-11 rounded-[var(--radius-button,8px)] px-6 text-[15px]",
-        icon: "h-9 w-9 rounded-[var(--radius-button,8px)]",
-        nav: "h-9 px-4 text-[14px] rounded-[var(--radius-nav,0px)]",
-        hero: "h-11 px-6 text-[14px] font-semibold rounded-[var(--radius-button,8px)]",
+        default: "h-10 px-4 py-2 text-[14px] rounded-[var(--radius-md,0.375rem)]",
+        sm: "h-8 rounded-[var(--radius-md,0.375rem)] px-3 text-xs",
+        lg: "h-12 rounded-[var(--radius-md,0.375rem)] px-6 text-[16px]",
+        icon: "h-9 w-9 rounded-[var(--radius-md,0.375rem)]",
+        nav: "h-9 px-4 text-[14px] rounded-[var(--radius-md,0.375rem)]",
+        hero: "min-h-[50px] px-8 py-3 text-[16px] font-medium rounded-[var(--radius-md,0.375rem)]",
+        cta: "min-h-[54px] px-10 py-4 text-[16px] font-medium rounded-[var(--radius-md,0.375rem)]",
       },
     },
     defaultVariants: {

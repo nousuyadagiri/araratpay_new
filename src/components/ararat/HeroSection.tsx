@@ -3,12 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useSafeReducedMotion } from "./SectionBits";
-// Previous hero section video assets:
-// import heroMp4 from "@/assets/videos/client-clear1080.mp4.asset.json";
-// import heroWebm from "@/assets/videos/client-clear1080.webm.asset.json";
-// import heroSmallMp4 from "@/assets/videos/client-clear720.mp4.asset.json";
-// import heroSmallWebm from "@/assets/videos/client-clear720.webm.asset.json";
-import heroPoster from "@/assets/videos/client-clear-poster.webp.asset.json";
+
+export const HERO_VIDEO_URL =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260912_104036_bd6924f6-3c8e-417e-8465-6d03c8c2e9e6.mp4";
+export const HERO_POSTER_URL =
+  "https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/82e7eb75-c65f-490a-99b5-f3d1cad54200.webp";
 
 const rise = (_reduce: boolean, delay: number) => ({
   "data-rise": "",
@@ -111,19 +110,14 @@ export default function HeroSection({ onAction }: { onAction: (name: string) => 
   return (
     <>
       <div ref={stageRef} className="cinema-stage">
-        <section id="top" ref={heroRef} className="cinema-hero" data-theme="dark">
+        <section id="top" ref={heroRef} className="cinema-hero">
           <div className="cinema-media" aria-hidden="true">
-            {/* <img className={`cinema-poster ${videoReady && showVideo ? "is-hidden" : ""}`} src={heroPoster.url} alt="" fetchPriority="high" decoding="async" width={1920} height={1080}/> */}
-            {/* Previous hero section video:
-        {showVideo && <video key={mobile ? "720" : "1080"} ref={videoRef} className={`cinema-video ${videoReady ? "is-ready" : ""}`} autoPlay muted loop playsInline preload="auto" poster={heroPoster.url} onLoadedData={() => setVideoReady(true)} onPlaying={() => setVideoReady(true)} onError={() => { setVideoReady(false); setVideoFailed(true); }}>
-          <source src={mobile ? heroSmallWebm.url : heroWebm.url} type="video/webm"/>
-          <source src={mobile ? heroSmallMp4.url : heroMp4.url} type="video/mp4"/>
-        </video>}
-        */}
-
-            <div className="absolute inset-0 bg-blue-500/10 z-10 pointer-events-none" />
-
-            {/* Updated hero section video */}
+            <img
+              src={HERO_POSTER_URL}
+              alt=""
+              className={`cinema-poster ${videoReady ? "is-hidden" : ""}`}
+              loading="eager"
+            />
             {showVideo && (
               <video
                 ref={videoRef}
@@ -133,7 +127,7 @@ export default function HeroSection({ onAction }: { onAction: (name: string) => 
                 loop
                 playsInline
                 preload="auto"
-                poster={heroPoster.url}
+                poster={HERO_POSTER_URL}
                 onLoadedData={() => setVideoReady(true)}
                 onPlaying={() => setVideoReady(true)}
                 onError={() => {
@@ -141,19 +135,19 @@ export default function HeroSection({ onAction }: { onAction: (name: string) => 
                   setVideoFailed(true);
                 }}
               >
-                <source src="/videos/hero.mp4" type="video/mp4" />
+                <source src={HERO_VIDEO_URL} type="video/mp4" />
               </video>
             )}
             <div className="cinema-shade" />
           </div>
           <div className="shell cinema-content">
             <div className="cinema-pill" {...rise(reducedMotion, 0)}>
-              One platform · four flows <span>Flat 1%</span>
+              <span>One platform · four flows</span> <strong>Flat 1%</strong>
             </div>
             <h1 {...rise(reducedMotion, 0.08)}>
               Business payments,
               <br />
-              powered by crypto.
+              powered by <mark className="headline-highlight">crypto</mark>.
             </h1>
             <p className="cinema-description" {...rise(reducedMotion, 0.18)}>
               Accept crypto, settle to your bank — all from one platform.
@@ -166,7 +160,17 @@ export default function HeroSection({ onAction }: { onAction: (name: string) => 
               >
                 Start accepting payments <ArrowRight className="size-4" />
               </Button>
+              <Button
+                variant="outline"
+                size="hero"
+                onClick={() => onAction("Explore Solutions")}
+              >
+                Explore solutions →
+              </Button>
             </div>
+            <p className="cinema-reassurance">
+              No monthly subscription · Flat 1% processing fee · Instant setup
+            </p>
           </div>
         </section>
       </div>

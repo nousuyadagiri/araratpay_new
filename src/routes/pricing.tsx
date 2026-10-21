@@ -79,7 +79,7 @@ function PricingPage() {
             <h1>
               Here's the whole bill.
               <br />
-              <em>It's short.</em>
+              <mark className="headline-highlight">It's short.</mark>
             </h1>
             <p>
               No plans, no tiers, no fine print. One flat 1% fee on every transaction, across every

@@ -2,7 +2,7 @@ import { useSyncExternalStore } from "react";
 
 export type Theme = "dark" | "light";
 export const THEME_KEY = "ararat-theme";
-export const THEME_COLORS: Record<Theme, string> = { dark: "#141413", light: "#f0eee6" };
+export const THEME_COLORS: Record<Theme, string> = { dark: "#0F1707", light: "#FCFAF5" };
 
 /** Runs inline in <head> before first paint: sets data-theme + theme-color, no flash. */
 export const THEME_BOOT = `try{var t=localStorage.getItem('${THEME_KEY}');if(t!=='light'&&t!=='dark')t='light';document.documentElement.dataset["theme"]=t;if(t==='dark')document.documentElement.classList.add('dark');else document.documentElement.classList.remove('dark');var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'${THEME_COLORS.dark}':'${THEME_COLORS.light}'}catch(e){document.documentElement.dataset["theme"]='light'}`;
